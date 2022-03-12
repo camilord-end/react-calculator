@@ -36,80 +36,139 @@
   padding: 20px 40px;
   background-color: #a5a7ac;
   color: #282c34;
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+  transition: 0.3s ease-in-out;
 }
 
-.zero {
+#zero {
   grid-area: zero;
 }
 
-.equal {
+#equals {
   grid-area: equal;
 }
 
 .dis {
   grid-area: dis;
+  border-radius: 2px;
   background-color: #1a1b1b;
   text-align: right;
   font-size: 20px;
 }
-
-.digits {
+/* Digits */
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eigth,
+#nine,
+#zero,
+#decimal {
   background-color: rgb(24, 24, 24);
   color: #8a8a8a;
-  transition: 0.3s ease-in;
 }
 
-.digits:hover {
+#one:hover,
+#two:hover,
+#three:hover,
+#four:hover,
+#five:hover,
+#six:hover,
+#seven:hover,
+#eigth:hover,
+#nine:hover,
+#zero:hover,
+#decimal:hover {
   background-color: #acacac;
   color: #1a1b1b;
 }
 
-.digits:active {
+#one:active,
+#two:active,
+#three:active,
+#four:active,
+#five:active,
+#six:active,
+#seven:active,
+#eigth:active,
+#nine:active,
+#zero:active,
+#decimal:active {
   border: 1px solid #ff6600;
   background-color: rgb(255, 162, 100);
 }
 
-.reset {
+/*Clear Button */
+#clear {
   background-color: rgb(255, 48, 48);
+  color: #1a1b1b;
 }
 
-
-.reset:hover {
-  transition: 0.3s ease-in-out;
+#clear:hover {
   background-color: rgb(255, 0, 0);
   color: white;
   border: 1px solid #acacac;
 }
 
-.reset:active {
-  transition: 0.3s ease-in-out;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+#clear:active {
+  background-color: #8a8a8a;
   border: 1px solid #ff0000;
 }
 
-.delete {
+/*Delete Button*/
+#delete {
   background-color: rgb(255, 115, 65);
 }
 
-.delete:hover {
+#delete:hover {
   background-color: rgb(255, 68, 0);
-  transition: 0.3s ease-in-out;
   color: white;
   border: 1px solid #acacac;
 }
 
-.delete:active {
-  background-color: rgb(255, 255, 255);
-  transition: 0.3s ease-in-out;
-  color: rgb(0, 0, 0);
-  border: 1px solid rgb(255,68,0);
+#delete:active {
+  background-color: #8a8a8a;
+  border: 1px solid rgb(255, 68, 0);
 }
 
-.equal {
+/* Equals Button */
+#equals {
   background-color: rgb(255, 253, 130);
+}
+#equals:hover {
+  background-color: rgb(255, 251, 0);
+}
+
+#equals:active {
+  background-color: rgb(255, 253, 130);
+  border: 1px solid rgb(255, 251, 0);
+}
+
+/* Basic Operations */
+#add,
+#subtrac,
+#multiply,
+#divide {
+  background-color: skyblue;
+}
+
+#add:hover,
+#subtrac:hover,
+#multiply:hover,
+#divide:hover {
+  background-color: rgb(0, 183, 255);
+}
+
+#add:active,
+#subtrac:active,
+#multiply:active,
+#divide:active {
+  background-color: skyblue;
+  border: 1px solid rgb(0, 183, 255);
 }
