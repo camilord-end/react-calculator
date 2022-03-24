@@ -1,2 +1,2 @@
-const OPERATORS = ["AC", "C", "/", "x", "+", "-", "="];
-export default OPERATORS;
+const operators = ["AC", "/", "x", "+", "-", "="];
+export default operators;

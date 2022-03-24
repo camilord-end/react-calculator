@@ -1,174 +1,159 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
   display: flex;
-  background-color: #282c34;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  color: white;
   flex-direction: column;
-}
-
-.tittle {
-  font-size: 40px;
-  font-weight: 600;
-}
-
-.grid {
-  display: grid;
-  border: 2px solid rgb(161, 161, 161);
-  border-radius: 5px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    "dis dis dis dis"
-    "AC C div times"
-    "seven eigth nine minus"
-    "four five six plus"
-    "one two three equal"
-    "zero zero dot equal";
-}
-
-.padButton {
-  display: flex;
-  justify-content: center;
+  color: white;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #a5a7ac;
-  color: #282c34;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+.calculator {
+  height: 445px;
+  max-width: 460px;
+  border-radius: 4px;
+  background-color: rgb(168, 168, 168);
+  border: 2px solid rgb(161, 161, 161);
+}
+
+.output {
+  background-color: #1b1b1b;
+  height: 80px;
+}
+
+.keys {
+  gap: 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #1b1b1b;
+
+}
+
+.keys button {
+  background-color: #1b1b1b;
+  color: #a5a5a5;
+  border: 2px solid #a5a5a5;
   cursor: pointer;
-  font-size: 20px;
   transition: 0.3s ease-in-out;
 }
 
-#zero {
-  grid-area: zero;
+.keys button:hover {
+  background-color: #000;
 }
 
-#equals {
-  grid-area: equal;
+.keys button:active {
+  color: white;
+  border: 2px solid white;
 }
 
-.dis {
-  grid-area: dis;
-  border-radius: 2px;
-  background-color: #1a1b1b;
+.keys button:first-child {
+  color: #ffffff;
+  grid-column-end: 3;
+  grid-column-start: 1;
+  background-color: #c00000;
+}
+
+.keys button:first-child:hover {
+  border: 2px solid #c00000;
+}
+
+.keys button:first-child:active {
+  background-color: #c71c1c;
+}
+
+.keys button:nth-child(2) {
+  color: #1b1b1b;
+  background-color: rgb(4, 190, 190);
+}
+
+.keys button:nth-child(2):hover {
+  border: 2px solid rgb(4, 190, 190);
+}
+
+.keys button:nth-child(2):active {
+  background-color: rgb(85, 214, 214);
+}
+
+.keys button:nth-child(3) {
+  color: #1b1b1b;
+  background-color: rgb(4, 190, 190);
+}
+
+.keys button:nth-child(3):hover {
+  border: 2px solid rgb(4, 190, 190);
+}
+
+.keys button:nth-child(3):active {
+  background-color: rgb(85, 214, 214);
+}
+
+.keys button:nth-child(7) {
+  color: #1b1b1b;
+  background-color: rgb(4, 190, 190);
+}
+
+.keys button:nth-child(7):hover {
+  border: 2px solid rgb(4, 190, 190);
+}
+
+.keys button:nth-child(7):active {
+  background-color: rgb(85, 214, 214);
+}
+
+.keys button:nth-child(11) {
+  color: #1b1b1b;
+  background-color: rgb(4, 190, 190);
+}
+
+.keys button:nth-child(11):hover {
+  border: 2px solid rgb(4, 190, 190);
+}
+
+.keys button:nth-child(11):active {
+  background-color: rgb(85, 214, 214);
+}
+
+.keys button:nth-child(15) {
+  color: #1b1b1b;
+  grid-row: 4 / 6;
+  grid-column: 4 / 4;
+  background-color: rgb(228, 205, 0);
+}
+
+.keys button:nth-child(15):hover {
+  border: 2px solid rgb(228, 205, 0);
+}
+
+.keys button:nth-child(15):active {
+  background-color: rgb(223, 209, 81);
+}
+
+.keys button:nth-child(16) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.input,
+.result {
+  color: #fff;
+  height: 40px;
+  display: block;
+  font-size: 40px;
   text-align: right;
-  font-size: 20px;
-}
-/* Digits */
-#one,
-#two,
-#three,
-#four,
-#five,
-#six,
-#seven,
-#eigth,
-#nine,
-#zero,
-#decimal {
-  background-color: rgb(24, 24, 24);
-  color: #8a8a8a;
+  padding-right: 10px;
 }
 
-#one:hover,
-#two:hover,
-#three:hover,
-#four:hover,
-#five:hover,
-#six:hover,
-#seven:hover,
-#eigth:hover,
-#nine:hover,
-#zero:hover,
-#decimal:hover {
-  background-color: #acacac;
-  color: #1a1b1b;
+button {
+  border: none;
+  font-size: 28px;
+  min-width: 80px;
+  min-height: 65px;
+  border-radius: 4px;
 }
 
-#one:active,
-#two:active,
-#three:active,
-#four:active,
-#five:active,
-#six:active,
-#seven:active,
-#eigth:active,
-#nine:active,
-#zero:active,
-#decimal:active {
-  border: 1px solid #ff6600;
-  background-color: rgb(255, 162, 100);
-}
-
-/*Clear Button */
-#clear {
-  background-color: rgb(255, 48, 48);
-  color: #1a1b1b;
-}
-
-#clear:hover {
-  background-color: rgb(255, 0, 0);
-  color: white;
-  border: 1px solid #acacac;
-}
-
-#clear:active {
-  background-color: #8a8a8a;
-  border: 1px solid #ff0000;
-}
-
-/*Delete Button*/
-#delete {
-  background-color: rgb(255, 115, 65);
-}
-
-#delete:hover {
-  background-color: rgb(255, 68, 0);
-  color: white;
-  border: 1px solid #acacac;
-}
-
-#delete:active {
-  background-color: #8a8a8a;
-  border: 1px solid rgb(255, 68, 0);
-}
-
-/* Equals Button */
-#equals {
-  background-color: rgb(255, 253, 130);
-}
-#equals:hover {
-  background-color: rgb(255, 251, 0);
-}
-
-#equals:active {
-  background-color: rgb(255, 253, 130);
-  border: 1px solid rgb(255, 251, 0);
-}
-
-/* Basic Operations */
-#add,
-#subtrac,
-#multiply,
-#divide {
-  background-color: skyblue;
-}
-
-#add:hover,
-#subtrac:hover,
-#multiply:hover,
-#divide:hover {
-  background-color: rgb(0, 183, 255);
-}
-
-#add:active,
-#subtrac:active,
-#multiply:active,
-#divide:active {
-  background-color: skyblue;
-  border: 1px solid rgb(0, 183, 255);
-}
