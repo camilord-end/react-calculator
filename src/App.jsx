@@ -8,94 +8,91 @@ import numbers from "./components/dat/numbers.js";
 const App = () => {
   const [input, setInput] = useState("0");
   const [output, setOutput] = useState("");
-  const [calculatorData, setCalculatorData] = useState("");
+  const [calculate, setCalculate] = useState("");
 
   const handleSubmit = () => {
-    const total = eval(calculatorData);
+    const total = eval(calculate);
     setInput(total);
     setOutput(`${total} = ${total}`);
-    setCalculatorData(`${total}`);
+    setCalculate(`${total}`);
   };
 
   const handleClear = () => {
     setInput("0");
-    setCalculatorData("");
+    setCalculate("");
   };
 
   const handleNumbers = (value) => {
-    if (!calculatorData.length) {
+    if (!calculate.length) {
       setInput(`${value}`);
-      setCalculatorData(`${value}`);
+      setCalculate(`${value}`);
     } else {
-      if (value === 0 && (calculatorData === "0" || input === "0")) {
-        setCalculatorData(`${calculatorData}`);
+      if (value === 0 && (calculate === "0" || input === "0")) {
+        setCalculate(`${calculate}`);
       } else {
-        const lastChat = calculatorData.charAt(calculatorData.length - 1);
-        const isLastChatOperator =
-          lastChat === "*" || operators.includes(lastChat);
+        const lastInput = calculate.charAt(calculate.length - 1);
+        const isLastInputOperator =
+          lastInput === "*" || operators.includes(lastInput);
 
-        setInput(isLastChatOperator ? `${value}` : `${input}${value}`);
-        setCalculatorData(`${calculatorData}${value}`);
+        setInput(isLastInputOperator ? `${value}` : `${input}${value}`);
+        setCalculate(`${calculate}${value}`);
       }
     }
   };
 
   const dotOperator = () => {
-    const lastChat = calculatorData.charAt(calculatorData.length - 1);
-    if (!calculatorData.length) {
+    const lastInput = calculate.charAt(calculate.length - 1);
+    if (!calculate.length) {
       setInput("0.");
-      setCalculatorData("0.");
+      setCalculate("0.");
     } else {
-      if (lastChat === "*" || operators.includes(lastChat)) {
+      if (lastInput === "*" || operators.includes(lastInput)) {
         setInput("0.");
-        setCalculatorData(`${calculatorData} 0.`);
+        setCalculate(`${calculate} 0.`);
       } else {
         setInput(
-          lastChat === "." || input.includes(".") ? `${input}` : `${input}.`
+          lastInput === "." || input.includes(".") ? `${input}` : `${input}.`
         );
         const formattedValue =
-          lastChat === "." || input.includes(".")
-            ? `${calculatorData}`
-            : `${calculatorData}.`;
-        setCalculatorData(formattedValue);
+          lastInput === "." || input.includes(".")
+            ? `${calculate}`
+            : `${calculate}.`;
+        setCalculate(formattedValue);
       }
     }
   };
 
   const handleOperators = (value) => {
-    if (calculatorData.length) {
+    if (calculate.length) {
       setInput(`${value}`);
-      const beforeLastChat = calculatorData.charAt(calculatorData.length - 2);
+      const beforeLastInput = calculate.charAt(calculate.length - 2);
 
-      const beforeLastChatIsOperator =
-        operators.includes(beforeLastChat) || beforeLastChat === "*";
+      const beforeLastInputIsOperator =
+        operators.includes(beforeLastInput) || beforeLastInput === "*";
 
-      const lastChat = calculatorData.charAt(calculatorData.length - 1);
+      const lastInput = calculate.charAt(calculate.length - 1);
 
       const lastChatIsOperator =
-        operators.includes(lastChat) || lastChat === "*";
+        operators.includes(lastInput) || lastInput === "*";
 
       const validOp = value === "x" ? "*" : value;
       if (
         (lastChatIsOperator && value !== "-") ||
-        (beforeLastChatIsOperator && lastChatIsOperator)
+        (beforeLastInputIsOperator && lastChatIsOperator)
       ) {
-        if (beforeLastChatIsOperator) {
-          const updatedValue = `${calculatorData.substring(
+        if (beforeLastInputIsOperator) {
+          const updatedValue = `${calculate.substring(
             0,
-            calculatorData.length - 2
+            calculate.length - 2
           )}${value}`;
-          setCalculatorData(updatedValue);
+          setCalculate(updatedValue);
         } else {
-          setCalculatorData(
-            `${calculatorData.substring(
-              0,
-              calculatorData.length - 1
-            )}${validOp}`
+          setCalculate(
+            `${calculate.substring(0, calculate.length - 1)}${validOp}`
           );
         }
       } else {
-        setCalculatorData(`${calculatorData}${validOp}`);
+        setCalculate(`${calculate}${validOp}`);
       }
     }
   };
@@ -126,12 +123,12 @@ const App = () => {
   };
 
   const handleOutput = () => {
-    setOutput(calculatorData);
+    setOutput(calculate);
   };
 
   useEffect(() => {
     handleOutput();
-  }, [calculatorData]);
+  }, [calculate]);
 
   return (
     <div className="container">
