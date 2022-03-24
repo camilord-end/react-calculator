@@ -1,4 +1,4 @@
-import "./App.css";
+import "./components/styles/App.css";
 import { useState, useEffect } from "react";
 import { Display } from "./components/calculator/Display.jsx";
 import { Keyboard } from "./components/calculator/Keyboard.jsx";
