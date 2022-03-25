@@ -73,7 +73,7 @@
 }
 
 .keys button:nth-child(2):hover {
-  border: 2px solid rgb(4, 190, 190);
+  border: 2px solid white;
 }
 
 .keys button:nth-child(2):active {
@@ -86,7 +86,7 @@
 }
 
 .keys button:nth-child(3):hover {
-  border: 2px solid rgb(4, 190, 190);
+  border: 2px solid white;
 }
 
 .keys button:nth-child(3):active {
@@ -99,7 +99,7 @@
 }
 
 .keys button:nth-child(7):hover {
-  border: 2px solid rgb(4, 190, 190);
+  border: 2px solid white;
 }
 
 .keys button:nth-child(7):active {
@@ -112,7 +112,7 @@
 }
 
 .keys button:nth-child(11):hover {
-  border: 2px solid rgb(4, 190, 190);
+  border: 2px solid white;
 }
 
 .keys button:nth-child(11):active {
